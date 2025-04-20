@@ -1,0 +1,77 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: black;
+}
+
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%);
+  background: rgba(30, 30, 30, 0.3);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px #000000aa;
+  transition: transform 0.2s ease;
+}
+
+.card h1 {
+  font-size: 3rem;
+  color: #FFD704;
+  margin: 0;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+
+.card button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  background-color: #111;
+  color: #FFD704;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card button:hover {
+  animation: flicker 0.3s infinite;
+  box-shadow: 0 0 10px #FFD70488;
+}
+
+/* Music toggle button */
+#music-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  color: #FFD704;
+  user-select: none;
+}
+
+@keyframes flicker {
+  0% { box-shadow: 0 0 5px #FFD704; }
+  50% { box-shadow: 0 0 15px #FFD70488; }
+  100% { box-shadow: 0 0 5px #FFD704; }
+}
+
+/* For the music toggle button hover flickering effect */
+#music-toggle:hover {
+  animation: flicker 0.3s infinite;
+  text-shadow: 0 0 5px #FFD70488, 0 0 10px #FFD70488;
+}
